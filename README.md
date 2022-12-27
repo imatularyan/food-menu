@@ -1,3 +1,3 @@
 # Menu
 
-You can check live version: https://restromenu.netlify.app/
+Click to see live version: https://restromenu.netlify.app/
