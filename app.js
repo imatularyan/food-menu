@@ -3,17 +3,19 @@ const sectionCenter = document.querySelector('.section-center');
 const container = document.querySelector('.btn-container');
 
 // load items
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
   displayMenuButtons();
 });
 
 // display menu items
-function displayMenuItems(menuItems) {
+const displayMenuItems = (menuItems) => {
   let displayMenu = menuItems.map(function (item) {
 
     return `<article class="menu-item">
+    <div class="img-container">
     <img src=${item.img} class="photo" alt=${item.title} />
+    </div>
     <div class="item-info">
       <header>
       <h4>${item.title}</h4>
@@ -31,8 +33,8 @@ function displayMenuItems(menuItems) {
 };
 
 // display menu buttons
-function displayMenuButtons() {
-  const categories = menu.reduce(function (values, item) {
+const displayMenuButtons = () => {
+  const categories = menu.reduce((values, item) => {
 
     if (!values.includes(item.category)) {
       values.push(item.category);
@@ -41,17 +43,17 @@ function displayMenuButtons() {
   },
     ['all']
   );
-  const categoriesBtns = categories.map(function (category) {
+  const categoriesBtns = categories.map( (category) => {
     return `<button class="filter-btn" type="button" data-id=${category}>${category}</button>`
   }).join('');
   container.innerHTML = categoriesBtns;
   const filterBtns = container.querySelectorAll('.filter-btn');
 
   // filter items
-  filterBtns.forEach(function (btn) {
+  filterBtns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const category = e.currentTarget.dataset.id;
-      const menuCategory = menu.filter(function (menuItem) {
+      const menuCategory = menu.filter((menuItem) => {
         // console.log(menuItem.category);
         if (menuItem.category === category) {
           return menuItem;
