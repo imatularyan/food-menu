@@ -67,7 +67,6 @@ h2 {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   gap: 3rem 2rem;
 }
 
@@ -75,16 +74,16 @@ h2 {
   flex-basis: 48%;
   display: flex;
   gap: 0 1.25rem;
-  height: 150px;
 }
 
-.photo {
+.container .photo {
+  width: 225px;
+  height: 150px;
   object-fit: cover;
   border: 0.25rem solid #c59d5f;
   border-radius: 0.5rem;
-  width: 225px;
-  height: 100%;
 }
+
 
 .item-info header {
   display: flex;
