@@ -12,8 +12,10 @@ body {
 }
 
 .menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   padding: 5rem 0;
-  width: 100%;
 }
 
 .title {
@@ -39,8 +41,11 @@ h2 {
 
 .btn-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 4rem;
+  align-items: center;
+  gap: 10px 2px;
+  margin: 0px auto 64px auto;
 }
 
 .filter-btn {
@@ -63,10 +68,10 @@ h2 {
 }
 
 .section-center {
-  width: 1170px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
+  max-width: 1170px;
+  margin: 0 auto;
   gap: 3rem 2rem;
 }
 
@@ -76,14 +81,13 @@ h2 {
   gap: 0 1.25rem;
 }
 
-.container .photo {
+.photo {
   width: 225px;
   height: 150px;
   object-fit: cover;
   border: 0.25rem solid #c59d5f;
   border-radius: 0.5rem;
 }
-
 
 .item-info header {
   display: flex;
@@ -110,4 +114,31 @@ h4 {
 
 .price {
   color: #c59d5f;
+}
+
+@media (max-width: 576px) {
+  .section-center {
+    flex-direction: column;
+    margin: 0px 25px;
+  }
+ }
+
+@media (max-width: 768px) {
+  .section-center {
+    flex-direction: column;
+    margin: 0px 25px ;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-center {
+    flex-direction: column;
+    margin: 0px 64px;
+  }
+}
+
+@media (min-width: 992px) {
+  .section-center {
+    margin: 0px auto;
+  }
 }
